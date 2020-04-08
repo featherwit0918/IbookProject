@@ -42,10 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users' # 用户模块
+    'users', # 用户模块,
+    
+    'corsheaders', # 跨域模块
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -124,3 +127,12 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# CORS
+CORS_ORIGIN_WHITELIST = (
+    'http://192.168.38.20:8000',
+    'http://192.168.0.9:8080'
+)
+
+# 允许携带cookie
+CORS_ALLOW_CREDENTIALS = True

@@ -123,3 +123,66 @@ vue create ibooksite
 npm run serve
 ```
 
+
+
+### django-cors-headers实现跨域
+
+1. 安装
+
+```python
+pip install django-cors-headers
+```
+
+2. 注册
+
+```python
+INSTALLED_APPS = (
+   'corsheaders',
+)
+```
+
+3. 添加中间件
+
+```python
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+]
+```
+
+> CorsMiddleware应该放置得尽可能高，特别是在可以产生响应的任何中间件之前， 如Django CommonMiddleware或Whitenoise WhiteNoiseMiddleware。 如果以前没有，则无法将CORS头添加到这些响应中。
+
+4. 配置白名单
+
+```python
+#允许携带cookie
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+
+# 允许的方法
+CORS_ALLOW_METHODS = ( 'DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT', 'VIEW', )
+
+#允许的请求头
+CORS_ALLOW_HEADERS = (
+    'XMLHttpRequest',
+    'X_FILENAME',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'Pragma',
+)
+
+# 允许的域名
+CORS_ORIGIN_WHITELIST = (
+    'http://192.168.38.20:8000',
+    'http://192.168.0.9:8080'
+)
+
+#跨域增加忽略
+CORS_ORIGIN_WHITELIST = ( '*')
+```
+
