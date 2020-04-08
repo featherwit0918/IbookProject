@@ -16,7 +16,11 @@ import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# 追加导包路径
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+# 查看导包路径
+# print(sys.path)
 
 # Quick-start development setting - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users' # 用户模块
 ]
 
 MIDDLEWARE = [
