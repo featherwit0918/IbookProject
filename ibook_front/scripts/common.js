@@ -1,4 +1,4 @@
-document.write(`<link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">`);
+// document.write(`<link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">`);
 document.write(`<link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">`);
 document.write(`<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">`);
 

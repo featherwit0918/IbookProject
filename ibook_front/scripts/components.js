@@ -1,8 +1,6 @@
 const Iheader = {
     data: function () {
-        return {
-
-        }
+        return {}
     },
     template: `
         
@@ -20,15 +18,17 @@ const Ifooter = {
                 },
 
                 {
-                    url: 'bookshelf.html',
-                    icon: 'fa-book',
-                    title: '书架'
-                },
-                {
                     url: 'category.html',
                     icon: 'fa-bars',
                     title: '分类'
                 },
+
+                {
+                    url: 'bookshelf.html',
+                    icon: 'fa-book',
+                    title: '书架'
+                },
+
                 {
                     url: 'mine.html',
                     icon: 'fa-user',
@@ -38,8 +38,8 @@ const Ifooter = {
         }
     },
     methods: {
-        navToPage(url = null){
-            if(url)
+        navToPage(url = null) {
+            if (url)
                 location.href = url
         }
     },
@@ -68,7 +68,7 @@ const Isearch = {
         }
     },
     methods: {
-        search(){
+        search() {
             this.$emit('search', this.keyword)
         }
     },
