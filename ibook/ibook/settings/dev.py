@@ -131,7 +131,7 @@ STATIC_URL = '/static/'
 # CORS
 CORS_ORIGIN_WHITELIST = (
     'http://192.168.38.20:8000',
-    'http://192.168.0.9:8080'
+    'http://192.168.38.20:8080'
 )
 
 # 允许携带cookie

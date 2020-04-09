@@ -73,58 +73,6 @@ python manage.py migrate
 
 
 
-### 前端准备工作
-
-1. 安装node.js
-
-```python
-1. 先下载安装包到 /usr/local路径下
-wget https://npm.taobao.org/mirrors/node/v8.0.0/node-v8.0.0-linux-x64.tar.xz
-
-2. 下载完成后解压
-tar -xvf  node-v8.0.0-linux-x64.tar.xz
-
-3. 重命名为node
-mv node-v8.1.4-linux-x64 node
-
-4. 配置环境变量
-vim /etc/profile
-在文件的最后添加
-#set for nodejs  
-export NODE_HOME=/usr/local/node  
-export PATH=$NODE_HOME/bin:$PATH
-
-5. 保存退出后执行更新命令
-source /etc/profile
-
-6. 如果不生效，重启系统就可以
-
-7. 检测node和npm是否安装成功
-node -v
-npm -v
-
-8. 切换镜像源
-npm config set registry https://registry.npm.taobao.org
-
-9. 查看镜像源是否切换成功
-npm config get registry
-```
-
-2. 安装Vue
-
-```python
-1. 安装vue3
-  npm install -g @vue/cli@3.2.1
-
-2. 创建项目
-vue create ibooksite
-
-3. 切换到项目目录下, 运行项目
-npm run serve
-```
-
-
-
 ### django-cors-headers实现跨域
 
 1. 安装
