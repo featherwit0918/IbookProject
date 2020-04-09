@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>校花的全能保安</title>
+    <script src="scripts/common.js"></script>
+    <link rel="stylesheet" href="styles/contents.css">
+    <link rel="stylesheet" href="styles/detail.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="content" :style="'font-size:' + setting.fontSize + 'px'" :class="[isNight ? 'night' : setting.backgroundColor]" @click="switchMenu()||closeSetting()">
+            ​代码1-1是一个调用微信原生组件浏览图片的JS API，相比于额外引入一个JS图片预览组件库，这种调用方式显得非常简洁和高效。
+​实际上，微信官方是没有对外暴露过如此调用的，此类 API 最初是提供给腾讯内部一些业务使用，很多外部开发者发现了之后，依葫芦画瓢地使用了，逐渐成为微信中网页的事实标准。2015年初，微信发布了一整套网页开发工具包，称之为 JS-SDK，开放了拍摄、录音、语音识别、二维码、地图、支付、分享、卡券等几十个API。给所有的 Web 开发者打开了一扇全新的窗户，让所有开发者都可以使用到微信的原生能力，去完成一些之前做不到或者难以做到的事情。
+同样是调用原生的浏览图片，调用方式如代码清单1-2所示。
+代码清单1-2 使用 JS-SDK 调用图片预览组件
+代码1-1是一个调用微信原生组件浏览图片的JS API，相比于额外引入一个JS图片预览组件库，这种调用方式显得非常简洁和高效。
+​实际上，微信官方是没有对外暴露过如此调用的，此类 API 最初是提供给腾讯内部一些业务使用，很多外部开发者发现了之后，依葫芦画瓢地使用了，逐渐成为微信中网页的事实标准。2015年初，微信发布了一整套网页开发工具包，称之为 JS-SDK，开放了拍摄、录音、语音识别、二维码、地图、支付、分享、卡券等几十个API。给所有的 Web 开发者打开了一扇全新的窗户，让所有开发者都可以使用到微信的原生能力，去完成一些之前做不到或者难以做到的事情。
+同样是调用原生的浏览图片，调用方式如代码清单1-2所示。
+代码清单1-2 使用 JS-SDK 调用图片预览组件
+代码1-1是一个调用微信原生组件浏览图片的JS API，相比于额外引入一个JS图片预览组件库，这种调用方式显得非常简洁和高效。
+​实际上，微信官方是没有对外暴露过如此调用的，此类 API 最初是提供给腾讯内部一些业务使用，很多外部开发者发现了之后，依葫芦画瓢地使用了，逐渐成为微信中网页的事实标准。2015年初，微信发布了一整套网页开发工具包，称之为 JS-SDK，开放了拍摄、录音、语音识别、二维码、地图、支付、分享、卡券等几十个API。给所有的 Web 开发者打开了一扇全新的窗户，让所有开发者都可以使用到微信的原生能力，去完成一些之前做不到或者难以做到的事情。
+同样是调用原生的浏览图片，调用方式如代码清单1-2所示。
+代码清单1-2 使用 JS-SDK 调用图片预览组件
+代码1-1是一个调用微信原生组件浏览图片的JS API，相比于额外引入一个JS图片预览组件库，这种调用方式显得非常简洁和高效。
+​实际上，微信官方是没有对外暴露过如此调用的，此类 API 最初是提供给腾讯内部一些业务使用，很多外部开发者发现了之后，依葫芦画瓢地使用了，逐渐成为微信中网页的事实标准。2015年初，微信发布了一整套网页开发工具包，称之为 JS-SDK，开放了拍摄、录音、语音识别、二维码、地图、支付、分享、卡券等几十个API。给所有的 Web 开发者打开了一扇全新的窗户，让所有开发者都可以使用到微信的原生能力，去完成一些之前做不到或者难以做到的事情。
+同样是调用原生的浏览图片，调用方式如代码清单1-2所示。
+代码清单1-2 使用 JS-SDK 调用图片预览组件
+        </div>
+        <div class="screen_bg" :class="{show: isShowScreenBg}" @click="close"></div>
+        <div id="contents" :class="isShowContents ? 'show' : ''">
+            <div class="title">
+                校花的全能保安
+            </div>
+            <div class="contents-list">
+                <div class="item active">
+                    第一章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第二章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第三章 夜色下的邂逅
+                </div>
+                <div class="item active">
+                    第一章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第二章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第三章 夜色下的邂逅
+                </div>
+                <div class="item active">
+                    第一章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第二章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第三章 夜色下的邂逅
+                </div>
+                <div class="item active">
+                    第一章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第二章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第三章 夜色下的邂逅
+                </div>
+                <div class="item active">
+                    第一章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第二章 夜色下的邂逅
+                </div>
+                <div class="item">
+                    第三章 夜色下的邂逅
+                </div>
+            </div>
+        </div>
+        <div id="footer" :class="isShowMenu ? 'show' : ''">
+            <div class="footer-items">
+                <div class="item" @click="showContents">
+                    <span class="icon"></span>
+                    <div class="title">
+                        目录
+                    </div>
+                </div>
+                <div class="item" @click="switchMode">
+                    <span class="icon"></span>
+                    <div class="title">
+                        夜间
+                    </div>
+                </div>
+                <div class="item" @click="showSetting">
+                    <span class="icon"></span>
+                    <div class="title">
+                        设置
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="setting" :class="{show: isShowSetting}">
+            <div class="item">
+                <div class="left">
+                    字号
+                </div>
+                <div class="right">
+                    <div class="button" @click="redFontSize">-</div>
+                    <div>{{setting.fontSize}}</div>
+                    <div class="button" @click="incFontSize">+</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    背景
+                </div>
+                <div class="right">
+                    <div v-for="item in setting.colorList" class="circle" :class="[setting.backgroundColor == item ? 'active' : '',item]" @click="switchBackgroundColor(item)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/detail.js"></script>
+</body>
+
+</html>

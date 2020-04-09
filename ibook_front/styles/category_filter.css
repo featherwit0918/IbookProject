@@ -1,0 +1,99 @@
+.tag-list{
+    margin-left: 18px;
+    margin-right: 12px;
+}
+.tag-list > .item:nth-child(n+2){
+    border-top: 1px solid var(--lineColor);
+}
+.tag{
+    float: left;
+    padding: 0px 8px;
+    margin-top: 1rem;
+}
+.tag.active{
+    color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+    border-radius: 20px;
+}
+.separate-line{
+    border-bottom: 10px solid var(--lineColor);
+}
+.booklist{
+    --imgHeight: 96px;
+    --imgWidth: 66px;
+}
+.booklist > .item{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 18px;
+    margin-left: 18px;
+    padding-right: 12px;
+}
+.booklist > .item:nth-child(n+2){
+    border-top: 1px solid var(--lineColor);
+}
+.booklist .img{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: var(--imgWidth);
+    height: var(--imgHeight);
+    background-color: teal;
+}
+.booklist .content{
+    margin-left: calc(10px + var(--imgWidth));
+}
+.booklist .content .title{
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-weight: bold;
+}
+.booklist .content .addToShelf{
+    position: absolute;
+    right: 0;
+    padding: 3px 0px;
+    width: 58px;
+    text-align: center;
+    color: #8aabd2;
+    background-color: #f6f7f6;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.booklist .content .description{
+    margin-top: 4px;
+    color: #999999;
+    font-size: 13px;
+    max-height: 38px;
+}
+.booklist .content .more{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-size: 12px;
+    color: #999999;
+}
+.booklist .content .more i.fa{
+    margin-right: 6px;
+}
+.booklist .content .more .info > span{
+    display: inline-block;
+    padding: 0 2px;
+    border: 1px solid;
+    border-radius: 4px;
+    margin-left: 2px;
+}
+.end{
+    color: #eabd9c;
+    border-color: #eabd9c;
+}
+.ing{
+    color: #6ec85f;
+    border-color: #6ec85f;
+}
+.tagname{
+    color: #999999;
+    border-color: #999999;
+}

@@ -1,0 +1,12 @@
+#app{
+    padding-top: 44px;
+}
+.contents-list .item{
+    padding: 12px 0;
+    margin: 0 20px;
+    color: #666666;
+    border-top: 1px solid var(--lineColor);
+}
+.contents-list .item:first-child{
+    border: none;
+}

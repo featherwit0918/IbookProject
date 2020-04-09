@@ -1,0 +1,13 @@
+:root{
+    --mainColor: #007bff;
+    --lineColor: #f4f4f4;
+}
+html,body{
+    font-size: 14px;
+    color: #333333;
+}
+.clear::after{
+    display: block;
+    content: '';
+    clear: both;
+}

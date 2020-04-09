@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浏览记录</title>
+    <script src="scripts/common.js"></script>
+    <link rel="stylesheet" href="styles/category_filter.css">
+    <link rel="stylesheet" href="styles/history.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="booklist">
+            <div class="item" v-for="item in booklist">
+                <div class="img"></div>
+                <div class="content">
+                    <div class="title">{{item.name}}</div>
+                    <div class="more">
+                        <div class="author">
+                            <i class="fa fa-user-circle"></i>{{item.author}}
+                        </div>
+                        <span class="addToShelf">加入书架</span>
+                    </div>
+                    <div class="time">{{item.time}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="empty" v-if="booklist.length == 0">
+            <div class="title">
+                暂无浏览记录
+            </div>
+            <div class="tip">
+                快去挑选你喜爱的书看吧
+            </div>
+            <div class="button">
+                <span>去找书</span>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/history.js"></script>
+</body>
+
+</html>
