@@ -134,3 +134,62 @@ CORS_ORIGIN_WHITELIST = (
 CORS_ORIGIN_WHITELIST = ( '*')
 ```
 
+
+
+### 配置模板以及静态文件
+
+1. 配置模块(dev.py)
+
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+
+2. 配置静态文件
+
+```python
+STATIC_URL = '/static/'
+STATICFILRS_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+```
+
+3. 在项目同名目录下分别新建`templates`以及`static`文件夹
+
+
+
+### 首页
+
+1. 切换到app目录下创建首页app
+
+```python
+python ../../manage.py startapp index
+```
+
+2. 在index目录中新建urls.py文件
+3. 在主路由中, 配置到indexapp路由
+
+```python
+from django.urls import path, include
+
+urlpatterns = [
+    # path('admin/', admin.site.urls),
+    path('', include('index.urls')) # 首页
+]
+```
+

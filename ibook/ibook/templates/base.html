@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% block link %}{% endblock %}">
+    <link rel="stylesheet" href="{% static './font/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static './css/base.css' %}">
+    <link rel="stylesheet" href="{% static './bootstrap-3.3.7/css/bootstrap.min.css' %}">
+    <script src="{% static './js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static './bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container-fluid row">
+
+    {# 头部 #}
+    <div id="top">
+        <div id="top" class="col-xs-12 word">
+            爱书网
+        </div>
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+
+
+
+    {# 内容 #}
+    {% block content %}
+    {% endblock %}
+
+    {# 底部 #}
+    <div id="bottom" class="row">
+          <div class="col-xs-3 word">
+              <a href="{% url 'index:index' %}">
+                  <i class="icon fa fa-home" aria-hidden="true"></i>
+                  <p>首页</p>
+              </a>
+          </div>
+          <div class="col-xs-3 word">
+              <a href="">
+                <i class="icon fa fa-bars" aria-hidden="true"></i>
+                <p>分类</p>
+              </a>
+          </div>
+          <div class="col-xs-3 word">
+              <a href="">
+                  <i class="icon fa fa-book" aria-hidden="true"></i>
+                  <p>书架</p>
+              </a>
+          </div>
+          <div class="col-xs-3 word">
+              <a href="">
+                  <i class="icon fa fa-user" aria-hidden="true"></i>
+                  <p>我的</p>
+              </a>
+          </div>
+    </div>
+</div>
+
+<script src="{% static './js/base.js' %}"></script>
+</body>
+</html>

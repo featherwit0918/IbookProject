@@ -16,7 +16,7 @@ import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(BASE_DIR)
+# print(BASE_DIR)
 
 # 追加导包路径
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
@@ -44,12 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users', # 用户模块,
-    
-    'corsheaders', # 跨域模块
+    'index' # 首页模块
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,15 +128,6 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILRS_DIRS = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
-# CORS
-CORS_ORIGIN_WHITELIST = (
-    'http://192.168.38.20:8000',
-    'http://192.168.38.20:8080'
-)
-
-# 允许携带cookie
-CORS_ALLOW_CREDENTIALS = True
