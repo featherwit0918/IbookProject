@@ -7,4 +7,11 @@
     <orderEntry type="jdk" jdkName="Remote Python 3.7.6 (sftp://root@192.168.38.20:22/root/.virtualenvs/ibook/bin/python3.7)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/ibook/ibook/templates" />
+      </list>
+    </option>
+  </component>
 </module>
