@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#app{
+    padding-bottom: 70px;
+}
+
+.main{
+    padding-top: 40%;
+    padding-left: 40px;
+
+}
+
+.main .img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: teal;
+}
+.main .tip{
+    margin-top: 6px;
+    font-size: 15px;
+    color: #999999;
+}
+
+.main .menu > .item{
+    margin-top: 16px;
+    position: relative;
+    display: flex;
+}
+.main .menu > .item:nth-child(n+2){
+    margin-top: 30px;
+}
+.main .menu > .item i.fa{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -11px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 20px;
+    color: #ddd;
+    margin-right: 4%!important;
+}
+
+.menu .item span{
+    font-size: 20px;
+    color: #000000;
+}

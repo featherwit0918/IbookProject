@@ -22,45 +22,46 @@
     {# 头部 #}
     <div id="top">
         <div id="top" class="col-xs-12 word">
-            爱书网
+            {% block top %}
+            {% endblock %}
         </div>
-        <i class="fa fa-search" aria-hidden="true"></i>
+
     </div>
-
-
 
     {# 内容 #}
     {% block content %}
     {% endblock %}
 
     {# 底部 #}
-    <div id="bottom" class="row">
-          <div class="col-xs-3 word">
-              <a href="{% url 'index:index' %}">
-                  <i class="icon fa fa-home" aria-hidden="true"></i>
-                  <p>首页</p>
-              </a>
-          </div>
-          <div class="col-xs-3 word">
-              <a href="">
-                <i class="icon fa fa-bars" aria-hidden="true"></i>
-                <p>分类</p>
-              </a>
-          </div>
-          <div class="col-xs-3 word">
-              <a href="">
-                  <i class="icon fa fa-book" aria-hidden="true"></i>
-                  <p>书架</p>
-              </a>
-          </div>
-          <div class="col-xs-3 word">
-              <a href="">
-                  <i class="icon fa fa-user" aria-hidden="true"></i>
-                  <p>我的</p>
-              </a>
-          </div>
-    </div>
-</div>
+    {% block bottom %}
+        <div id="bottom" class="row">
+            <div class="col-xs-3 word">
+                <a href="{% url 'index:index' %}">
+                    <i class="icon fa fa-home" aria-hidden="true"></i>
+                    <p>首页</p>
+                </a>
+            </div>
+            <div class="col-xs-3 word">
+                <a href="">
+                    <i class="icon fa fa-bars" aria-hidden="true"></i>
+                    <p>分类</p>
+                </a>
+            </div>
+            <div class="col-xs-3 word">
+                <a href="">
+                    <i class="icon fa fa-book" aria-hidden="true"></i>
+                    <p>书架</p>
+                </a>
+            </div>
+            <div class="col-xs-3 word">
+                <a href="{% url 'users:mine' %}">
+                    <i class="icon fa fa-user" aria-hidden="true"></i>
+                    <p>我的</p>
+                </a>
+            </div>
+        </div>
+        </div>
+    {% endblock %}
 
 <script src="{% static './js/base.js' %}"></script>
 </body>

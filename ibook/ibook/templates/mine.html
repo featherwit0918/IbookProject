@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        我的
+    {% endblock %}
+    {% block link %}
+        {% static './css/mine.css' %}
+    {% endblock %}
+</head>
+<body>
+<div id="app">
+
+    {% block top %}
+        我的
+    {% endblock %}
+
+    {# 内容 #}
+    {% block content %}
+
+        <div class="main">
+            <div class="img"></div>
+            <div class="tip">ID: 19123158</div>
+            <div class="menu">
+                <div class="item">
+                    <span>浏览记录</span><a href="history.html"><i class="fa fa-angle-right"></i><a>
+                </div>
+                <div class="item">
+                    <span>阅读偏好</span><a href="preference.html"><i class="fa fa-angle-right"></i><a>
+                </div>
+                <div class="item">
+                    <span>关于我们</span><a href="{% url 'users:about' %}"><i class="fa fa-angle-right"></i><a>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+.main {
+    padding: 0;
+    margin: 0;
+}
+
+#top {
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+    position: fixed;
+    top: 0;
+}
+
+#top span{
+    color: #000000;
+}
+
+#top i.fa{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -11px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 20px;
+    color: #ddd;
+    margin-left: 4%;
+}
+
+i {
+    float: left;
+    color: #C9C9C9;
+    margin-left: 15px;
+}
+
+#content p {
+    margin: 0;
+    margin-left: 10px;
+    font-size: 23px;
+    text-indent: 40px;
+    color: #000000;
+    /*margin-top: 25px;*/
+}
+
+#content {
+    position: absolute;
+    top: 9%;
+}

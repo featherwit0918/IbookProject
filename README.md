@@ -173,7 +173,7 @@ STATICFILRS_DIRS = [
 
 
 
-### 首页
+### 首页模块
 
 1. 切换到app目录下创建首页app
 
@@ -191,5 +191,48 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', include('index.urls')) # 首页
 ]
+```
+
+
+
+### 用户模块
+
+1. 创建users模块app
+
+```python
+python manage.py startapp users
+```
+
+2. 因为需要迁移模型类, 所以需要在dev文件中注册app
+
+```python
+INSTALLED_APPS = [
+    ...
+    'users', # 用户模块,
+	...
+]
+```
+
+3. 在users/models.py文件中创建user表, 需要继承自django系统自带的AbstractUser类
+
+```python
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+
+
+# Create your models here.
+class User(AbstractUser):
+    nickname = models.CharField(max_length=32)
+    gender = models.IntegerField(default=1)  #1男 0女
+    last_read = models.IntegerField() # 最后阅读的一本书
+    last_read_chapter_id = models.IntegerField() # 最后阅读一本书的章节id
+    create_time = models.DateTimeField(auto_now_add=True)
+```
+
+4. 在dev配置文件中,指定自定义的用户模型类
+
+```python
+# 指定自定义的用户模型类
+AUTH_USER_MODEL = 'users.User'
 ```
 

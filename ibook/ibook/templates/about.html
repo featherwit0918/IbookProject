@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        关于我们
+    {% endblock %}
+    {% block link %}
+        {% static './css/about.css' %}
+    {% endblock %}
+</head>
+<body>
+
+{% block top %}
+    <a href="{% url 'users:mine' %}"><i class="fa fa-angle-left"></i><a>
+    关于我们
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="menu">
+            <div class="logo">
+                <img src="{% static './images/logo.png' %}" alt="" id="image">
+                <p id="title">Ibook</p>
+                <p class="content">爱书网, 不容错过</p>
+                <p class="content">当前版本 1.0.1</p>
+            </div>
+
+            <div class="skip">
+                <div class="item">
+                    <span>版权声明</span><a href="{% url 'users:copyright' %}"><i class="fa fa-angle-right"></i><a>
+                </div>
+                <div class="item">
+                    <span>隐私政策</span><a href="{% url 'users:privacy' %}"><i class="fa fa-angle-right"></i><a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block bottom %}
+
+{% endblock %}
+
+</body>
+</html>
