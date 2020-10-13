@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+
+    <link rel="stylesheet" href="{% static "css/search.css" %}">
+
+    <!-- 引入font-awesome -->
+    <link href="{% static "fontawesome-5.11.2/css/fontawesome.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/brands.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/solid.css" %}" rel="stylesheet">
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+    <!-- 引入vuerouter -->
+    <script src="{% static "js/vue-router.js" %}"></script>
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <div class="search">
+        <form class="search_con">
+        </form>
+        <p><a href="{% url "books:index" %}">取消</a></p>
+    </div>
+
+    <div class=" clearfix">
+        <ul class="books_type_list">
+            {% for result in page.object_list %}
+                <div class="part">
+                    <div class="bookinfo">
+                        <img src="{{ result.object.cover }}" alt="" style="width: 130px; height: 180px;">
+                        <div class="info">
+                            <p>{{ result.object.book_name }}</p>
+                            <p>{{ result.object.intro }}</p>
+                            <div class="author">
+                                <i class="fa fa-user"></i>
+                                <p>{{ result.object.author_name }}</p>
+
+                                <p>{{ result.object.get_status }}</p>
+                                <p>{{ result.object.cate_id }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <p><a href="{% url "books:readschedule" result.object.id %}">开始阅读</a></p>
+                        <p @click="addBookcase({{ result.object.id }})">加入书架</p>
+                    </div>
+                </div>
+
+                {% empty %}
+                <p>没有找到您要查询的小说</p>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="{% static "js/search.js" %}">
+
+</script>
+</html>

@@ -1,0 +1,3 @@
+{{ object.id }}
+{{ object.book_name }}
+{{ object.cate_id.cate_name }}

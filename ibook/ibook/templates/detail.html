@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小说详情</title>
+
+    <link rel="stylesheet" href="{% static "css/detail.css" %}">
+
+    <!-- 引入font-awesome -->
+    <link href="{% static "fontawesome-5.11.2/css/fontawesome.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/brands.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/solid.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/direcotry.css" %}">
+
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+    <!-- 引入vuerouter -->
+    <script src="{% static "js/vue-router.js" %}"></script>
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+</head>
+<body>
+
+<div id="app">
+    <div class="nav">
+        <p><a href="{% url "books:index" %}"><</a></p>
+        <p><a href="{% url "books:index" %}"><i class="fas fa-home"></i></a></p>
+    </div>
+    <div id="top">
+        <img src="{{ book_cover }}" alt="">
+        <div class="info">
+            <p>{{ book_name }}</p>
+            <p>{{ author_name }}</p>
+            <div class="category">
+                <span>{{ word_count }}</span>
+                <span>{{ status }}</span>
+                <span>{{ category }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="intro">
+        {{ intro }}
+    </div>
+
+    <div id="directory">
+        <p>目录</p>
+        <p>连载至{{ last_chapter }}</p>
+        <p><a href="{% url "books:directory" book_id %}">></a></p>
+    </div>
+
+    <div id="like">
+        <div id="title">
+            <p>同类热门推荐</p>
+            <p><a href="{% url "books:category_detail" category_id %}">查看更多>></a></p>
+        </div>
+        <div id="like_book">
+            <div class="like_book_info" v-for="item in like_books">
+                <a :href="'http://192.168.38.20:8000/detail/' + item.book_id">
+                    <img :src="[[item.book_cover]]" alt="">
+                    <p class="like_book_name">[[item.book_name]]</p>
+                    <p class="like_author_name">[[item.author_name]]</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="bottom" @click="addBookcase">加入书架</p>
+        <p class="bottom">|</p>
+        <p class="bottom"><a href="{% url "books:readschedule" book_id%}">开始阅读</a></p>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    let category_id = "{{ category_id }}";
+    let book_id = "{{ book_id }}"
+</script>
+<script src="{% static "js/detail.js" %}" type="text/javascript"></script>
+</html>

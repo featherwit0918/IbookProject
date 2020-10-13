@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="{% static "css/login.css" %}">
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+    <!-- 引入vuerouter -->
+    <script src="{% static "js/vue-router.js" %}"></script>
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+</head>
+<body>
+
+<div id="app">
+    <div class="logo">
+        <img src="{% static "images/logo.png" %}" alt="">
+        <p>爱书网, 不容错过</p>
+    </div>
+
+    <form method="post" @submit="on_submit" v-cloak>
+        <div class="form">
+            <div class="row-group">
+                <p>用户名或手机号</p>
+                <input type="text" placeholder="请填写用户名或手机号" v-model="username" @blur="check_username" name="username">
+                <span v-show="error_username" class="user_error">请输入正确的用户名或手机号</span>
+            </div>
+            <div class="row-group">
+                <p>密码</p>
+                <input type="password" placeholder="请填写密码" v-model="password" @blur="check_password" name="password">
+                <span v-show="error_password" class="pwd_error">密码最少8位, 最长20位</span>
+            </div>
+
+            <div class="more_input clearfix">
+                <input type="checkbox" v-model="remembered" name="remembered">
+                <label>记住登录</label>
+            </div>
+
+            {% if account_errmsg %}
+                <div class="pwd_error">{{ account_errmsg }}</div>
+            {% endif %}
+
+            <div>
+                <input type="submit" value="登录" class="submit">
+            </div>
+
+
+            <div class="register">
+                <a href="{% url "users:register" %}">
+                    还没账号? 去注册 >>
+                </a>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
+</body>
+<script src="{% static "js/login.js" %}"></script>
+</html>

@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容</title>
+
+    <link rel="stylesheet" href="{% static "css/content.css" %}">
+
+    <!-- 引入font-awesome -->
+    <link href="{% static "fontawesome-5.11.2/css/fontawesome.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/brands.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/solid.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/direcotry.css" %}">
+
+    <!-- 引入jquery -->
+    <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="{% static "bootstrap-3.3.7/css/bootstrap.css" %}">
+    <script src="{% static "bootstrap-3.3.7/js/bootstrap.js" %}"></script>
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+
+    <!-- 引入vuerouter -->
+    <script src="{% static "js/vue-router.js" %}"></script>
+
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+</head>
+<body>
+
+<div id="app" v-cloak>
+    <div class="follow" @click="clickFollow">
+        <div class="book_name">
+            <a href="{% url "books:detail" book_id %}">{{ book_name }}</a>
+        </div>
+        <div class="title">
+            {{ chapter_name }}
+        </div>
+        <div class="content">
+            {{ content }}
+        </div>
+
+        <div class="switch">
+            {% if not previous_count %}
+                <span>
+                    <a href="{% url "books:content" book_id next_chapter_id %}">下一章</a>
+                </span>
+            {% elif not next_count %}
+                <span>
+                    <a href="{% url "books:content" book_id previous_chapter_id %}">上一章</a>
+                </span>
+            {% else %}
+                <span><a href="{% url "books:content" book_id previous_chapter_id %}">上一章</a></span>
+                <span>|</span>
+                <span><a href="{% url "books:content" book_id next_chapter_id %}">下一章</a></span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="above" v-show="show_above">
+        <div class="above_title">
+            <div>
+                <p>目录</p>
+                <p>{{ book_name }}</p>
+            </div>
+            <span class="fas fa-sort-amount-up-alt" v-show="show_sort" @click="changeSort"></span>
+            <span class="fas fa-sort-amount-down" v-show="!show_sort" @click="changeSort"></span>
+        </div>
+        <div class="content">
+            <div v-for="item in chapter_list" class="detail">
+                <a :href="'http://192.168.38.20:8000/content/' + book_id + '/' + item.id"><p>[[item.name]]</p></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+    let book_id = {{ book_id }};
+    let chapter_id = {{ chapter_id }};
+</script>
+<script src="{% static "js/content.js" %}" type="text/javascript"></script>
+</html>

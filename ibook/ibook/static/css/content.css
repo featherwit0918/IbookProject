@@ -1,0 +1,97 @@
+html {
+    background-color: #E5E5E5;
+}
+
+.follow {
+    position: absolute;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#app {
+    margin-top: 0;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.book_name {
+    margin-top: 67px;
+    font-size: 25px;
+}
+
+.book_name a {
+    color: #9E9E9E;
+    text-decoration: none
+}
+
+.book_name a:hover {
+    color: #000000;
+    text-decoration: none
+}
+
+.title {
+    margin-top: 167px;
+    font-size: 40px;
+}
+
+.content {
+    margin-top: 148px;
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.above {
+    position: fixed;
+    width: 68%;
+    height: 2000px;
+    background-color: #ffffff;
+    float: left;
+}
+
+.above_title {
+    margin-top: 30px;
+    margin-left: 38px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.above_title div {
+    width: 87%;
+}
+
+.above_title span {
+    margin-top: 40px;
+    color: #9d9d9d;
+    font-size: 25px;
+}
+
+.switch {
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.switch span:nth-child(1) {
+    margin-left: 33%;
+}
+
+.switch span:nth-child(2) {
+    margin-left: 37px;
+    color: #9E9E9E
+}
+
+.switch span:nth-child(3) {
+    margin-left: 37px;
+}
+
+.switch span a {
+    color: #9E9E9E;
+    text-decoration: none
+}
+
+.switch a:hover {
+    color: #000000;
+    text-decoration: none
+}

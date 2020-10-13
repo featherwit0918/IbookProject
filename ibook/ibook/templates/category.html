@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static "css/category.css" %}">
+{% endblock %}
+
+{% block container %}
+
+    <div class="top">
+        <p :class="{clickcolor: isActive}" @click="clickMan">男生</p>
+        <p :class="{clickcolor: !isActive}" @click="clickWoman">女生</p>
+    </div>
+
+    <div class="content">
+        <div v-for="item in category_info" class="category_info">
+            <p>[[item.category_name]]小说</p>
+            <p><a :href="'http://192.168.38.20:8000/category/detail/' + item.category_id">></a></p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="{% static "js/category.js" %}"></script>
+{% endblock %}

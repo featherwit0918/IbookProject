@@ -1,44 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% block title %}
-        我的
-    {% endblock %}
-    {% block link %}
-        {% static './css/mine.css' %}
-    {% endblock %}
-</head>
-<body>
-<div id="app">
 
-    {% block top %}
-        我的
-    {% endblock %}
+{% block title %}
+    我的
+{% endblock %}
 
-    {# 内容 #}
-    {% block content %}
+{% block link %}
+    <link rel="stylesheet" href="{% static "css/mine.css" %}">
+{% endblock %}
 
-        <div class="main">
-            <div class="img"></div>
-            <div class="tip">ID: 19123158</div>
-            <div class="menu">
-                <div class="item">
-                    <span>浏览记录</span><a href="history.html"><i class="fa fa-angle-right"></i><a>
-                </div>
-                <div class="item">
-                    <span>阅读偏好</span><a href="preference.html"><i class="fa fa-angle-right"></i><a>
-                </div>
-                <div class="item">
-                    <span>关于我们</span><a href="{% url 'users:about' %}"><i class="fa fa-angle-right"></i><a>
-                </div>
-            </div>
+{% block container %}
+    <div class="top"></div>
+
+    <div class="user">
+        <div class="user-image">
+            <img src="{% static "images/head.jpeg" %}" alt="">
+        </div>
+        <p>[[username]]</p>
+    </div>
+
+    <div class="category">
+
+        <div class="detail">
+            <p>浏览记录</p>
+            <p><a href="{% url "users:history" %}">></a></p>
         </div>
 
+        <div class="detail">
+            <p>阅读偏好</p>
+            <p><a href="{% url "users:preference" %}">></a></p>
+        </div>
 
-    {% endblock %}
-</div>
-</body>
-</html>
+        <div class="detail">
+            <p>关于我们</p>
+            <p><a href="{% url "users:about" %}">></a></p>
+        </div>
+
+    </div>
+
+    <div class="logout" v-if="username">
+        <p><a href="{% url "users:logout" %}">退出登录</a></p>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static "js/mine.js" %}"></script>
+{% endblock %}

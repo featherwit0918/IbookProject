@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>目录</title>
+    <!-- 引入font-awesome -->
+    <link href="{% static "fontawesome-5.11.2/css/fontawesome.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/brands.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/solid.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/direcotry.css" %}">
+
+    <!-- 引入jquery -->
+    <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="{% static "bootstrap-3.3.7/css/bootstrap.css" %}">
+    <script src="{% static "bootstrap-3.3.7/js/bootstrap.js" %}"></script>
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+
+    <!-- 引入vuerouter -->
+    <script src="{% static "js/vue-router.js" %}"></script>
+
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+</head>
+<body>
+
+<div id="app">
+    <div id="top">
+        <p><a href="{% url "books:detail" book_id %}"><</a></p>
+        <p>{{ book_name }}</p>
+        <span class="fas fa-sort-amount-up-alt" v-show="show_sort" @click="changeSort"></span>
+        <span class="fas fa-sort-amount-down" v-show="!show_sort" @click="changeSort"></span>
+    </div>
+
+    <div class="content">
+        <div v-for="item in chapter_list" class="detail">
+            <a :href="'http://192.168.38.20:8000/content/' + book_id + '/' + item.id"><p>[[item.name]]</p></a>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+    let book_id = {{ book_id }};
+</script>
+<script src="{% static "js/direcotry.js" %}" type="text/javascript"></script>
+</html>

@@ -1,24 +1,20 @@
-{% extends 'base.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block title %}
-        隐私政策
-    {% endblock %}
-    {{% block link %}
-    {% static "./css/privacy.css" %}
-{% endblock %}}
+    <title>隐私政策</title>
+    <link rel="stylesheet" href="{% static "css/privacy.css" %}">
 </head>
 <body>
 
-{% block top %}
-    <a href="{% url 'users:about' %}"><i class="fa fa-angle-left"></i><a><span>隐私政策</span>
-{% endblock %}
+<div class="main">
+    <div class="item">
+        <i><a href="{% url "users:about" %}"><</a></i>
+        <span>隐私政策</span>
+    </div>
 
-{% block content %}
-    <div id="content">
+    <div>
         <p>
             【爱书网】深知个人信息对您的重要性，并会尽全力保护您的个人信息安全和可靠。我们致力于维持您对我们的信任，恪守以下原则，
             保护您的个人信息：权值一致原则、目的明确原则、选择同意原则、最少够用原则、确保安全原则、主体参与原则、公开透明原则等。
@@ -49,11 +45,8 @@
             4、存储并维护与您相关的信息，用于我们运营业务或履行法律义务。
         </p>
     </div>
-{% endblock %}
 
-{% block bottom %}
-
-{% endblock %}
+</div>
 
 </body>
 </html>

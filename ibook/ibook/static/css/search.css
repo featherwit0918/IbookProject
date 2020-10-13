@@ -1,0 +1,148 @@
+.search {
+    width: 100%;
+    height: 100px;
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #9d9d9d;
+}
+
+.search_con {
+    width: 800px;
+    height: 50px;
+    border: 2px solid #F4F4F4;
+    background: url(../images/icons.png) 10px -335px no-repeat;
+    background-color: #F4F4F4;
+    margin-left: 50px;
+}
+
+.search p {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.search p a {
+    text-decoration: none;
+    color: #5bc0de;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #9d9d9d;
+    margin-left: 0;
+}
+
+.books_type_list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+}
+
+.bookinfo {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.bookinfo .info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    height: 250px;
+}
+
+.bookinfo .info p:nth-child(1) {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.bookinfo .info p:nth-child(2) {
+    font-size: 20px;
+    margin-top: 0;
+    color: #9d9d9d;
+}
+
+.bookinfo .info .author {
+    display: flex;
+    flex-direction: row;
+    color: #9d9d9d;
+}
+
+.bookinfo .info .author i {
+    font-size: 20px;
+    margin-top: 4px;
+}
+
+.bookinfo .info .author p:nth-child(2) {
+    font-size: 20px;
+    margin-left: 10px;
+    width: 78%;
+}
+
+.bookinfo .info .author p:nth-child(3) {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: -5px;
+    width: 50px;
+    height: 29px;
+    border: 1px solid #4cae4c;
+    border-radius: 5px;
+    color: #4cae4c;
+    text-align: center;
+}
+
+.bookinfo .info .author p:nth-child(4) {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: -5px;
+    width: 50px;
+    height: 29px;
+    border: 1px solid #9d9d9d;
+    border-radius: 5px;
+    color: #9d9d9d;
+    text-align: center;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-top: 0;
+}
+
+.bottom p:nth-child(1) {
+    font-size: 25px;
+    width: 300px;
+    height: 50px;
+    background-color: #00B2EE;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.bottom p::before {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle;
+}
+
+.bottom p:nth-child(1) a {
+    text-decoration: none;
+    color: #F4F4F4;
+}
+
+.bottom p:nth-child(2) {
+    font-size: 25px;
+    width: 300px;
+    height: 50px;
+    background-color: #F4F4F4;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 50px;
+    color: #00B2EE;
+}

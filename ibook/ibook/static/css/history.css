@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+#topnav {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    border-bottom: 1px solid #9d9d9d;
+}
+
+#topnav p a {
+    font-size: 30px;
+    color: #D1D1D1;
+    text-decoration: none;
+    margin-left: 50px;
+    width: 50%;
+}
+
+#topnav .title {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 25px;
+    margin-left: 38%;
+}
+
+.title {
+    font-size: 35px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.clear {
+    font-size: 23px;
+    margin-left: 35%;
+    margin-top: 30px;
+    color: #9d9d9d;
+}
+
+.bookinfo {
+    margin-top: 30px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.bookinfo a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+.bookinfo a img {
+    width: 100px;
+    height: 150px;
+}
+
+.info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info p {
+    font-size: 25px;
+    color: #000000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 5px;
+}
+
+.author {
+    display: flex;
+    flex-direction: row;
+    color: #9d9d9d;
+}
+
+.author i {
+    margin-top: 50px;
+}
+
+.author p {
+    margin-top: 45px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #9d9d9d;
+}
+
+.addbookcase {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #F8F8FF;
+    text-align: center;
+    background-color: #F8F8FF;
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+.addbookcase p {
+    color: #6495ED;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 17px;
+}
+
+.notbook {
+    width: 100%;
+    height: 1170px;
+    background-color: #F7F7F7;
+}
+
+.notbook img {
+    width: 400px;
+    height: 400px;
+    margin-left: 30%;
+    margin-top: 30%;
+}
+
+.find {
+    font-size: 40px;
+    width: 180px;
+    height: 60px;
+    border: 3px solid #5bc0de;
+    border-radius: 30px;
+    margin-left: 40%;
+    margin-top: 20px;
+}
+
+.find p{
+    margin-top: 1px;
+    margin-left: 30px;
+}
+
+.find p a {
+    text-decoration: none;
+    color: #5bc0de;
+}

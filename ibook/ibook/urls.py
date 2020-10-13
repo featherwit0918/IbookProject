@@ -1,4 +1,4 @@
-"""ibook URL Configuration
+"""i URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('', include('index.urls')), # 首页
-    path('', include('users.urls')), # 我的
+    path('admin/', admin.site.urls),
+    path('', include('books.urls')),  # 小说模块
+    path('', include('users.urls')),  # 用户模块
+    path('', include('bookcase.urls')),  # 书架模块
+    path('search/', include('haystack.urls')),
 ]

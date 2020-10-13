@@ -1,0 +1,56 @@
+body{
+    width: 980px;
+}
+
+.top {
+    height: 300px;
+    background-color: #9d9d9d;
+}
+
+.bookcase {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.bookinfo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bookinfo image {
+    width: 200px;
+    height: 250px;
+}
+
+.bookinfo p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.searchmany {
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 210px;
+    height: 300px;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 0 30px 0 grey;
+    text-align: center;
+    background-color: #F7F7F7;
+}
+
+.searchmany a img{
+    width: 210px;
+    height: 210px;
+    margin-top: 45px;
+}
+
+.nobook {
+    margin-top: 50px;
+    margin-left: 50px;
+}

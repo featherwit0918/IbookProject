@@ -2,67 +2,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% block link %}{% endblock %}">
-    <link rel="stylesheet" href="{% static './font/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static './css/base.css' %}">
-    <link rel="stylesheet" href="{% static './bootstrap-3.3.7/css/bootstrap.min.css' %}">
-    <script src="{% static './js/jquery-1.12.4.min.js' %}"></script>
-    <script type="text/javascript" src="{% static './bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    
+    {% block link %}
+    
+    {% endblock %}
+
+    <!-- 引入font-awesome -->
+    <link href="{% static "fontawesome-5.11.2/css/fontawesome.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/brands.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/solid.css" %}" rel="stylesheet">
+
+    <!-- 引入jquery -->
+    <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="{% static "bootstrap-3.3.7/css/bootstrap.css" %}">
+    <script src="{% static "bootstrap-3.3.7/js/bootstrap.js" %}"></script>
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+
+    <!-- 引入vuerouter -->
+    <script src="{% static "js/vue-router.js" %}"></script>
+
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+
 </head>
 <body>
 
-<div class="container-fluid row">
-
-    {# 头部 #}
-    <div id="top">
-        <div id="top" class="col-xs-12 word">
-            {% block top %}
-            {% endblock %}
-        </div>
-
+<div id="app">
+    <div id="container">
+        {% block container %}{% endblock %}
     </div>
 
-    {# 内容 #}
-    {% block content %}
-    {% endblock %}
-
-    {# 底部 #}
-    {% block bottom %}
-        <div id="bottom" class="row">
-            <div class="col-xs-3 word">
-                <a href="{% url 'index:index' %}">
-                    <i class="icon fa fa-home" aria-hidden="true"></i>
-                    <p>首页</p>
-                </a>
-            </div>
-            <div class="col-xs-3 word">
-                <a href="">
-                    <i class="icon fa fa-bars" aria-hidden="true"></i>
-                    <p>分类</p>
-                </a>
-            </div>
-            <div class="col-xs-3 word">
-                <a href="">
-                    <i class="icon fa fa-book" aria-hidden="true"></i>
-                    <p>书架</p>
-                </a>
-            </div>
-            <div class="col-xs-3 word">
-                <a href="{% url 'users:mine' %}">
-                    <i class="icon fa fa-user" aria-hidden="true"></i>
-                    <p>我的</p>
-                </a>
-            </div>
+    <div id="nav">
+        <div class="bar">
+            <a href="{% url "books:index" %}">
+                <i class="fas fa-home"></i>
+                <span>首页</span>
+            </a>
         </div>
+        <div class="bar">
+            <a href="{% url "books:category" %}">
+                <i class="fas fa-bars"></i>
+                <span>分类</span>
+            </a>
         </div>
-    {% endblock %}
+        <div class="bar">
+            <a href="{% url "bookcase:bookcase" %}">
+                <i class="fas fa-book"></i>
+                <span>书架</span>
+            </a>
+        </div>
+        <div class="bar">
+            <a href="{% url 'users:mine' %}">
+                <i class="fas fa-user"></i>
+                <span>我的</span>
+            </a>
 
-<script src="{% static './js/base.js' %}"></script>
+        </div>
+    </div>
+</div>
+
+
 </body>
+{% block template %}{% endblock %}
+{% block script %}{% endblock %}
 </html>

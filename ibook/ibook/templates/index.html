@@ -1,34 +1,50 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% block title %}
-        首页
-    {% endblock %}
-    {% block link %}
-        {% static './css/index.css' %}
-    {% endblock %}
-</head>
-<body>
 
-<div id="main">
+{% block title %}
+    首页
+{% endblock %}
 
-    {% block top %}
-        爱书网
-        <i class="fa fa-search" aria-hidden="true"></i>
-    {% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+{% endblock %}
 
-    <div id="content">
-
+{% block container %}
+    <div class="search">
+        <form method="get" action="/search/" class="search_con">
+            <input type="text" class="input_text" name="q" placeholder="请输入您想要搜索的小说">
+            <input type="submit" class="input_btn" name="" value="搜索">
+        </form>
     </div>
-    <div id="">
 
+    <div class="content">
+        {% for category_book_info in category_book_infos %}
+            <div class="category">
+                <p class="category_name">{{ category_book_info.category_name }}</p>
+                <p class="many"><a href="{% url "books:category_detail" category_book_info.category_id %}">查看更多 >></a>
+                </p>
+            </div>
+            {% for book_info in category_book_info.book_infos %}
+                <div class="bookinfo">
+                    <a href="{% url "books:detail" book_info.book_id %}">
+                        <img src="{{ book_info.cover }}" class="cover">
+                        <div class="info">
+                            <p class="book_title">{{ book_info.book_name }}</p>
+                            <p class="book_intro">{{ book_info.intro }}</p>
+                            <div class="author_info">
+                                <i class="fas fa-user"></i>
+                                <p class="author_name">{{ book_info.author_name }}</p>
+                                <div class="status">{{ book_info.status }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+
+        {% endfor %}
     </div>
-</div>
+{% endblock %}
 
-</body>
-</html>
+{% block script %}
+    <script src="{% static "js/index.js" %}"></script>
+{% endblock %}

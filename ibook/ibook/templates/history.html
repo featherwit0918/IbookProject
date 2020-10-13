@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览记录</title>
+    <!-- 引入font-awesome -->
+    <link href="{% static "fontawesome-5.11.2/css/fontawesome.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/brands.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/solid.css" %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "css/history.css" %}">
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <div id="topnav">
+        <p><a href="{% url "users:mine" %}"><</a></p>
+        <p class="title">浏览记录</p>
+        <p class="clear" @click="clearBook">清空</p>
+    </div>
+
+    <div class="content" v-show="show_books">
+        <div v-for="item in books" class="bookinfo">
+            <a :href="'http://192.168.38.20:8000/detail/' + item.id">
+                <img :src="item.book_cover" alt="">
+                <div class="info">
+                    <p>[[item.book_name]]</p>
+                    <div class="author">
+                        <i class="fas fa-user"></i>
+                        <p>[[item.author_name]]</p>
+                    </div>
+                </div>
+
+            </a>
+            <div class="addbookcase" @click="addToBookShelf(item.id)">
+                <p>加入书架</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="notbook" v-show="!show_books">
+        <img src="{% static "images/notbook.png" %}" alt="">
+
+        <div class="find">
+            <p><a href="{% url "books:index" %}">去找书</a></p>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="{% static "js/history.js" %}">
+</script>
+</html>

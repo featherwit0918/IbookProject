@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static "css/bookcase.css" %}">
+{% endblock %}
+
+{% block container %}
+    <div class="top">
+
+    </div>
+
+    {% if HaveBook %}
+
+        <div class="bookcase">
+            {% for bookinfo in data %}
+                <div class="bookinfo">
+                    <a href="{% url "books:detail" bookinfo.book_id %}">
+                        <img src="{{ bookinfo.book_cover }}" alt="">
+                        <p>{{ bookinfo.book_name }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+            <div class="searchmany">
+                <a href="{% url "books:index" %}"><img src="{% static "images/searchmany.jpeg" %}" alt=""></a>
+            </div>
+        </div>
+
+    {% else %}
+        <div class="searchmany nobook">
+            <a href="{% url "books:index" %}"><img src="{% static "images/searchmany.jpeg" %}" alt=""></a>
+        </div>
+    {% endif %}
+
+{% endblock %}

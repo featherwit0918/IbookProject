@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分类图书</title>
+
+    <link rel="stylesheet" href="{% static "css/category_detail.css" %}">
+    <!-- 引入font-awesome -->
+    <link href="{% static "fontawesome-5.11.2/css/fontawesome.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/brands.css" %}" rel="stylesheet">
+    <link href="{% static "fontawesome-5.11.2/css/solid.css" %}" rel="stylesheet">
+
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+    <!-- 引入vuerouter -->
+    <script src="{% static "js/vue-router.js" %}"></script>
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+</head>
+<body>
+
+<div id="app">
+    <div class="top">
+        <p><a href="{% url "books:category" %}"><</a></p>
+        <p>{{ category_name }}小说</p>
+    </div>
+
+    <div class="middle">
+
+    </div>
+
+    <div class="content">
+        {% for bookinfo in data %}
+            <a href="{% url "books:detail" bookinfo.book_id %}">
+                <div class="cover">
+                    <img src="{{ bookinfo.cover }}" alt="">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <p>{{ bookinfo.book_name }}</p>
+                    </div>
+                    <div class="intor">
+                        {{ bookinfo.intro }}
+                    </div>
+                    <div class="author_info">
+                        <i class="fas fa-user"></i>
+                        <p>{{ bookinfo.author_name }}</p>
+                        <div>{{ bookinfo.status }}</div>
+                        <div>{{ category_name }}小说</div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+
+    </div>
+</div>
+
+</body>
+</html>

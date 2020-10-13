@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阅读偏好</title>
+
+    <link rel="stylesheet" href="{% static "css/preference.css" %}">
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+</head>
+<body>
+
+<div id="app">
+    <div id="topnav">
+        <p><a href="{% url "users:mine" %}"><</a></p>
+        <p class="title">阅读偏好</p>
+    </div>
+
+    <div class="title">
+        <p>请选择性别</p>
+    </div>
+
+    <form method="post" @submit="on_submit" v-cloak>
+
+        <div class="radio">
+            <label :class="{label:sex === 'man'}" @click="onSexClick('man')">
+                <div class="img">
+                    <img src="{% static "images/man.png" %}" alt="">
+                </div>
+                <div>
+                    <input type="radio" name="sex" value="1" class="input">
+                    男生
+                </div>
+            </label>
+            <label :class="{label:sex === 'woman'}" @click="onSexClick('woman')">
+                <div class="img">
+                    <img src="{% static "images/woman.png" %}" alt="">
+                </div>
+                <div>
+                    <input type="radio" name="sex" value="2" class="input">
+                    女生
+                </div>
+            </label>
+        </div>
+
+        <div class="submit">
+            <input type="submit" value="提交" class="submit">
+        </div>
+
+    </form>
+</div>
+
+
+</body>
+
+<script src="{% static "js/preference.js" %}"></script>
+</html>

@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册界面</title>
+    <link rel="stylesheet" href="{% static "css/register.css" %}">
+
+    <!-- 引入vue -->
+    <script src="{% static "js/vue2.6.11.js" %}"></script>
+    <!-- 引入vuerouter -->
+    <script src="{% static "js/vue-router.js" %}"></script>
+    <!-- 引入axios -->
+    <script src="{% static "js/axios.min.js" %}"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <div class="logo">
+        <img src="{% static "images/logo.png" %}" alt="">
+        <p>爱书网, 不容错过</p>
+    </div>
+
+    <form method="post" @submit="on_submit" v-cloak>
+        <div class="form">
+
+            <div class="row-group">
+                <p>用户名:</p>
+                <input placeholder="请填写5-20个字符用户名" type="text" @blur="check_username" v-model="username" name="username"
+                       id="user_name">
+                <span class="error_tip" v-show="error_name">[[error_name_message]]</span>
+            </div>
+            <div class="row-group">
+                <p>密码</p>
+                <input placeholder="请填写密码" type="password" v-model="password" @blur="check_password" name="password">
+                <span class="error_tip" v-show="error_password">请输入8-20位的密码</span>
+            </div>
+            <div class="row-group">
+                <p>确认密码</p>
+                <input placeholder="请确认密码" type="password" v-model="password2" @blur="check_password2" name="password2">
+                <span class="error_tip" v-show="error_password2">两次输入的密码不一致</span>
+            </div>
+            <div class="row-group">
+                <p>手机号</p>
+                <input placeholder="请填写手机号码" type="text" v-model="mobile" @blur="check_mobile" name="mobile">
+                <span class="error_tip" v-show="error_mobile">[[error_mobile_message]]</span>
+            </div>
+            <div class="row-group">
+                <p>验证码</p>
+                <input placeholder="请填写验证码" type="text" @blur="check_sms_code" v-model="sms_code" name="sms_code">
+                <a class="code" @click="send_sms_code">[[sms_code_tip]]</a>
+                <span class="error_tip sms_code_error" v-show="error_sms_code">[[error_sms_code_message]]</span>
+
+                {% if sms_code_errmsg %}
+                    <span class="error_tip sms_code_error">{{ sms_code_errmsg }}</span>
+                {% endif %}
+            </div>
+
+            <div>
+                {% if register_errmsg %}
+                    <span class="error_tip">{{ register_errmsg }}</span>
+                {% endif %}
+                <input type="submit" class="submit" value="注册">
+            </div>
+
+
+            <div class="login">
+                <a href="{% url "users:login" %}">
+                    已有账号? 去登录 >>
+                </a>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<script src="{% static "js/register.js" %}"></script>
+</body>
+</html>

@@ -1,8 +1,127 @@
-* {
-    padding: 0;
-    margin: 0;
+.search {
+    width: 100%;
+    height: 100px;
+    margin-top: 10%;
+    text-align: center;
+    position: relative;
+    margin-left: 120px;
+}
+.search_con{
+    width: 800px;
+    height: 50px;
+    border: 2px solid #2e6da4;
+    background: url(../images/icons.png) 10px -335px no-repeat;
 }
 
-p {
-    color: red;
+.search_con .input_text{
+    width: 656px;
+    height: 46px;
+    border: 0;
+    margin: 2px 0 0 36px;
+    outline: none;
+    font-size: 20px;
+    color: #737272;
+    font-family: "Microsoft Sans Serif";
+    margin-top: -5px;
+}
+
+.search_con .input_btn{
+    width: 100px;
+    height: 50px;
+    background-color: #2e6da4;
+    border: 0;
+    font-size: 14px;
+    color: #fff;
+    font-family: "Microsoft Sans Serif";
+    outline: none;
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 10%;
+    background-color: red;
+    width: 100%;
+    height: 00px;
+}
+
+.category {
+    margin-top: 5%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.category .category_name {
+    font-size: 37px;
+    width: 80%;
+}
+
+.category .many {
+    font-size: 20px;
+    color: #9d9d9d;
+}
+
+.bookinfo a {
+    color: #D1D1D1;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.bookinfo a:hover {
+    color: #000000;
+    text-decoration: none
+}
+
+.bookinfo .cover {
+    width: 170px;
+    height: 230px;
+}
+
+.bookinfo .info {
+    margin-left: 15px;
+    width: 70%;
+}
+
+.bookinfo .info .book_title {
+    font-size: 30px;
+}
+
+.bookinfo .info .book_intro {
+    color: #9d9d9d;
+    font-size: 20px;
+    margin-top: 27px;
+}
+
+.author_info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    font-size: 18px;
+    color: #9d9d9d;
+}
+
+.author_info .author_name {
+    margin-left: 5px;
+    width: 80%;
+}
+
+.status {
+    width: 60px;
+    height: 30px;
+    border: 1px solid #D3D3D3;
+    background-color: #D3D3D3;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.many a {
+    text-decoration: none;
+}
+
+.many a:hover{
+    text-decoration: none;
 }
