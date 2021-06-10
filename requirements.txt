@@ -9,7 +9,7 @@ chardet==3.0.4
 constantly==15.1.0
 cryptography==2.9
 cssselect==1.1.0
-Django==2.1.8
+Django==2.2.24
 django-cors-headers==3.2.1
 django-haystack==2.8.1
 django-ranged-response==0.2.0
